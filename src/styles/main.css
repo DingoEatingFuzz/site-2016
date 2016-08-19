@@ -1,0 +1,33 @@
+@import 'variables.css';
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
+    "Fira Sans", "Droid Sans", "Helvetica Neue", 
+    sans-serif;
+  font-weight: lighter;
+  font-size: responsive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1, h2 {
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  /*color: var(--accent-color);*/
+  font-weight: normal;
+
+  span {
+    font-size: 150%;
+    font-weight: bold;
+  }
+}
+
+h2 {
+  margin-left:4em;
+}
