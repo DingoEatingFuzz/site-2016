@@ -1,6 +1,3 @@
-// import 'systemjs-hot-reloader/default-listener.js'
-import { bootstrap } from './bootstrap'
+// Bootstrap the CSS and HTML assets
 import {} from './styles/main.css'
-
-bootstrap()
-console.log('ha dur durr!')
+import {} from './index.html'

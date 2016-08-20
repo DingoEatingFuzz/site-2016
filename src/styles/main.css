@@ -21,6 +21,7 @@ h1, h2 {
 h1 {
   /*color: var(--accent-color);*/
   font-weight: normal;
+  font-size:2em;
 
   span {
     font-size: 150%;
@@ -30,4 +31,35 @@ h1 {
 
 h2 {
   margin-left:4em;
+}
+
+h3 {
+  font-size:1.4em;
+  margin-bottom:0;
+}
+
+section:first-child {
+  margin-top:5em;
+}
+
+article {
+  section, footer {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    line-height:1.5;
+    padding-bottom:2.5em;
+    margin-bottom:2.5em;
+
+    border-bottom:2px solid rgba(#039, 0.1);
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  footer {
+    font-size:85%;
+    border-bottom:none;
+  }
 }
