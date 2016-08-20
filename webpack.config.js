@@ -8,6 +8,19 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 var path = require('path')
 
+var plugins = [
+  new ExtractTextPlugin('[name].css')
+];
+
+var PROD = process.env.NODE_ENV === 'production';
+
+if (PROD) {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: { warnings: false },
+    output: { comments: false },
+  }))
+}
+
 module.exports = {
   entry: {
     app: [ './src/main.js' ]
@@ -54,9 +67,7 @@ module.exports = {
     ];
   },
 
-  plugins: [
-    new ExtractTextPlugin('[name].css')
-  ],
+  plugins: plugins,
 
   devServer: {
     contentBase: 'src/'
