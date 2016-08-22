@@ -4,12 +4,16 @@ var cssnesting = require('postcss-nested')
 var cssimports = require('postcss-import')
 
 var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var CopyPlugin = require('copy-webpack-plugin')
 
 var path = require('path')
 
 var plugins = [
-  new ExtractTextPlugin('[name].css')
+  new ExtractTextPlugin('[name].css'),
+  new CopyPlugin([
+    { from: 'src/images', to: 'images' }
+  ])
 ];
 
 var PROD = process.env.NODE_ENV === 'production';
