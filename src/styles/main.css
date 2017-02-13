@@ -68,9 +68,9 @@ blockquote {
 }
 
 nav {
-  background:rgba(#000, 0.05);
+  background:rgba(var(--accent-color), 0.10);
   padding:15px;
-  border-bottom:2px solid rgba(#000, 0.15);
+  border-bottom:2px solid rgba(var(--accent-color), 0.15);
   text-align:center;
 
   a.social-icon {
@@ -81,7 +81,8 @@ nav {
       position:relative;
       top:5px;
       height:20px;
-      fill:#999;
+      fill:var(--accent-color);
+      opacity:0.5;
 
       &:hover {
         fill:var(--accent-color-bright);
@@ -98,13 +99,11 @@ nav {
     margin:0 15px;
     padding-bottom:5px;
     color:var(--accent-color);
-    transition:color, border-bottom 0.3s ease-out;
-    border-bottom:2px dashed transparent;
+    transition:color 0.3s ease-out;
     font-weight:normal;
 
     &:hover {
       color:var(--accent-color-bright);
-      border-bottom-color:var(--accent-color-bright);
     }
   }
 }
@@ -165,11 +164,11 @@ article {
 
   > li {
     padding:1.5em;
-    border:2px solid rgba(#000, 0.3);
+    border:2px solid rgba(#000, 0.1);
     border-radius:0.5em;
     display:flex;
     flex-flow:row wrap;
-    align-items:center;
+    align-items:flex-start;
     margin-bottom:2em;
 
     .project-date {
