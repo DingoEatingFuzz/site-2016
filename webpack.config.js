@@ -6,6 +6,7 @@ var cssimports = require('postcss-import')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CopyPlugin = require('copy-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var path = require('path')
 
@@ -13,7 +14,11 @@ var plugins = [
   new ExtractTextPlugin('[name].css'),
   new CopyPlugin([
     { from: 'src/images', to: 'images' }
-  ])
+  ]),
+  new HtmlWebpackPlugin({
+    filename: 'projects.html',
+    template: 'src/projects.hbs',
+  }),
 ];
 
 var PROD = process.env.NODE_ENV === 'production';
@@ -31,7 +36,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'static'),
+    path: path.resolve(__dirname, PROD ? 'static' : 'src'),
     filename: 'bundle.js',
     chunkFilename: '[id].js'
   },
@@ -54,6 +59,14 @@ module.exports = {
         query: {
           presets: [ 'es2015' ]
         }
+      },
+      {
+        test: /\.to?ml$/,
+        loader: 'toml',
+      },
+      {
+        test: /\.(handlebars|hbs)$/,
+        loader: 'handlebars?helperDirs[]=' + path.resolve(__dirname, 'src/helpers'),
       },
     ],
   },
