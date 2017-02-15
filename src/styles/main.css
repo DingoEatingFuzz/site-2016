@@ -68,7 +68,7 @@ blockquote {
 }
 
 nav {
-  background:rgba(var(--accent-color), 0.10);
+  background:var(--accent-color-light);
   padding:15px;
   border-bottom:2px solid rgba(var(--accent-color), 0.15);
   text-align:center;
@@ -205,7 +205,6 @@ article {
 
       img {
         display:block;
-        max-height:400px;
         width:100%;
       }
     }

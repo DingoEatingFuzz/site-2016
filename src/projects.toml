@@ -1,9 +1,9 @@
 [[projects]]
 name = "Climb Tracker"
-url = "https://github.com/DingoEatingFuzz/chrome-emoji-skin-tone-randomizer"
+url = "http://climb.mlange.io"
 year = 2016
 tags = [ "JavaScript", "React", "Firebase" ]
-thumbnail = "/images/climb-tracker.png"
+thumbnail = "/images/ct-tracker.png"
 description = """
 A simple web app for tracking bouldering workouts. It focuses on quickly marking which problems were completed and which were attempted. In this way, at the end of the workout, a histogram and tally of problems and problem difficulties is plotted. There are also monthly reports to look back on.
 """
